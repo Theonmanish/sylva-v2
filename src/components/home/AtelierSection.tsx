@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const ATELIER_MATERIALS = [
   {
@@ -49,6 +50,19 @@ export function AtelierSection() {
         </p>
       </div>
 
+
+      {/* Atelier Workshop Image */}
+      <div className="relative w-full aspect-[16/7] mb-16 sm:mb-20 overflow-hidden">
+        <Image
+          src="/images/workshop.png"
+          alt="Terrarium vessels, natural hardscape, moss and botanical materials arranged in the Sylva Auris atelier"
+          fill
+          sizes="(max-width: 768px) 100vw, 1200px"
+          className="object-cover object-center"
+        />
+      </div>
+
+
       {/* Materials Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-14">
         {ATELIER_MATERIALS.map((material) => (
@@ -74,15 +88,7 @@ export function AtelierSection() {
         ))}
       </div>
 
-      <div>
-        <Link
-          href="/atelier"
-          className="inline-flex items-center space-x-2 font-sans text-xs uppercase tracking-[0.2em] text-ivory hover:text-muted-gold transition-colors duration-300 group"
-        >
-          <span>Discover the Atelier</span>
-          <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-        </Link>
-      </div>
+      
     </section>
   );
 }

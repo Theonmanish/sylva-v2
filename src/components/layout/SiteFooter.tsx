@@ -5,7 +5,7 @@ import Link from "next/link";
 import { footerNavigation } from "@/content/navigation";
 import { siteConfig } from "@/content/site";
 
-const emptySubscribe = () => () => {};
+const emptySubscribe = () => () => { };
 const getClientYear = () => new Date().getFullYear();
 const getServerYear = () => 2026;
 
@@ -41,9 +41,7 @@ export function SiteFooter() {
 
           {/* Navigation Column */}
           <div className="md:col-span-4 flex flex-col space-y-4">
-            <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-muted-grey/60">
-              Index
-            </span>
+
             <ul className="grid grid-cols-2 gap-y-3 gap-x-6">
               {footerNavigation.map((item) => (
                 <li key={item.href}>
@@ -60,15 +58,13 @@ export function SiteFooter() {
 
           {/* Contact / Enquiries Column */}
           <div className="md:col-span-3 flex flex-col space-y-4">
-            <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-muted-grey/60">
-              Direct
-            </span>
+
             <div className="flex flex-col space-y-3 font-sans text-xs">
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="text-ivory/80 hover:text-muted-gold transition-colors duration-300"
               >
-                {siteConfig.email}
+                Email: {siteConfig.email}
               </a>
               <a
                 href={siteConfig.instagram.url}
@@ -76,18 +72,23 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="text-ivory/80 hover:text-muted-gold transition-colors duration-300"
               >
-                Instagram {siteConfig.instagram.handle}
+                Instagram: {siteConfig.instagram.handle}
+              </a>
+              <a
+                href={siteConfig.loc.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ivory/80 hover:text-muted-gold transition-colors duration-300"
+              >
+                Location: {siteConfig.loc.handle}
               </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-sans text-xs text-muted-grey/60">
-          <p>© {currentYear} {siteConfig.name}. All rights reserved.</p>
-          <p className="tracking-widest uppercase text-[10px]">
-            {siteConfig.location}
-          </p>
+        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col items-center justify-center gap-4 font-sans text-xs text-muted-grey/60 text-center">
+          © {currentYear} {siteConfig.name}. All rights reserved.
         </div>
       </div>
     </footer>

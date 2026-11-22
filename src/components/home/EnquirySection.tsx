@@ -34,7 +34,7 @@ export function EnquirySection() {
             href={`mailto:${siteConfig.email}`}
             className="font-sans text-xs uppercase tracking-[0.18em] text-muted-grey hover:text-ivory transition-colors duration-300"
           >
-            Direct: {siteConfig.email}
+           
           </a>
         </div>
       </div>

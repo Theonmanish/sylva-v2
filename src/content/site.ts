@@ -8,7 +8,7 @@ export const siteConfig = {
   meaning: "The Golden Forest",
   tagline: "Forest. Reimagined.",
   description:
-    "Miniature botanical landscapes composed around the vessel from living plants, moss and natural materials in Moodbidri, Karnataka.",
+    "Miniature botanical landscapes composed around the vessel from living plants, moss and natural materials.",
   url: "https://sylvaauris.in",
   previewUrl: "https://sylvaauris.vercel.app",
   location: "Moodbidri, Karnataka, India",
@@ -16,5 +16,9 @@ export const siteConfig = {
   instagram: {
     handle: "@sylva.auris",
     url: "https://www.instagram.com/sylva.auris/",
+  },
+  loc: {
+    handle: "Sylva Auris",
+    url: "https://maps.app.goo.gl/QvzkKMZEAVMJ61wZ6",
   },
 } as const;

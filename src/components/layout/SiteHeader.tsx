@@ -53,7 +53,7 @@ export function SiteHeader() {
         }`}
     >
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-17 flex items-center justify-between">
         {/* Brand Wordmark (Text-based temporary logo) */}
         <Link
           href="/"
