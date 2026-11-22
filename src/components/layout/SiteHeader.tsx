@@ -9,7 +9,19 @@ import { siteConfig } from "@/content/site";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  // Monitor scroll position to transition from transparent to subtle translucent black
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -35,7 +47,12 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-pitch-black/90 backdrop-blur-md border-b border-white/5 transition-colors duration-300">
+
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 w-full bg-pitch-black/50 backdrop-blur-md border-b border-white/5 transition-all duration-300 ease-out ${isOpen ? "bg-pitch-black" : ""
+        }`}
+    >
+
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
         {/* Brand Wordmark (Text-based temporary logo) */}
         <Link
@@ -57,11 +74,10 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-sans text-xs uppercase tracking-[0.2em] transition-colors duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-muted-gold ${
-                  isActive
+                className={`font-sans text-xs uppercase tracking-[0.2em] transition-colors duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-muted-gold ${isActive
                     ? "text-ivory"
                     : "text-muted-grey hover:text-ivory"
-                }`}
+                  }`}
               >
                 {item.label}
               </Link>
@@ -103,11 +119,10 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`font-serif text-2xl tracking-[0.12em] transition-colors duration-300 ${
-                    isActive
+                  className={`font-serif text-2xl tracking-[0.12em] transition-colors duration-300 ${isActive
                       ? "text-muted-gold"
                       : "text-ivory hover:text-muted-gold"
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </Link>
