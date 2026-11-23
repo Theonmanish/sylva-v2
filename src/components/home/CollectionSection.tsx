@@ -1,7 +1,6 @@
 
 "use client";
 import Image from "next/image";
-
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 
@@ -11,7 +10,7 @@ export function CollectionSection() {
   return (
     <section
       id="collection"
-      className="relative z-10 w-full bg-pitch-black px-6 pt-16 pb-28 sm:px-8 sm:pt-20 sm:pb-36 lg:px-12"
+      className="relative z-10 w-full bg-pitch-black px-6 pt-20 pb-28 sm:px-8 sm:pt-24 sm:pb-36 lg:px-12 scroll-mt-20"
       aria-label="Collection"
     >
       <motion.div
@@ -24,67 +23,67 @@ export function CollectionSection() {
         }}
         className="max-w-7xl mx-auto"
       >
-        <div className="max-w-2xl mb-16 sm:mb-20">
-          <span className="font-sans text-xs uppercase tracking-[0.25em] text-muted-gold mb-3 block">
+        {/* Section Introduction */}
+        <div className="max-w-3xl mb-16 sm:mb-24">
+          <span className="font-sans text-[13px] uppercase tracking-[0.28em] text-[#B99868] mb-5 block">
             Collection
           </span>
 
-          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-ivory font-light tracking-tight mb-4 leading-[1.15]">
-            Ready-made pieces
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-[#F1EBDD] font-light tracking-tight mb-6 leading-[1.12]">
+            Botanical compositions, ready to discover.
           </h2>
 
-          <p className="font-sans text-sm sm:text-base text-muted-grey leading-relaxed">
-            Two distinct botanical expressions, composed around living plants,
-            moss and natural materials.
+          <p className="font-sans text-base sm:text-lg text-[#D0C8BA] leading-[1.85] max-w-2xl">
+            A curated collection of handcrafted botanical pieces,
+            bringing together living plants, moss and natural materials
+            in considered forms. Each composition offers a distinct
+            way to experience nature within your space.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        {/* Collection Categories */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
+
           {/* Terrariums */}
-          <div className="flex flex-col justify-between p-8 sm:p-12 bg-transparent">
-            
+          <div className="flex flex-col justify-between bg-transparent">
             <div>
-              <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-muted-grey/60 mb-6 block">
+              <span className="font-sans text-xs uppercase tracking-[0.28em] text-[#B99868] mb-6 block">
                 01 — Glass Enclosures
               </span>
 
-              <h3 className="font-serif text-2xl sm:text-4xl text-ivory font-light tracking-tight mb-4">
+              <h3 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-[#F1EBDD] font-light tracking-tight mb-5">
                 Terrariums
               </h3>
 
-              <p className="font-sans text-sm text-ivory/80 leading-relaxed mb-8">
-                Living plants, moss and natural hardscape composed within a
-                glass vessel. The geometry and clarity of the glass set the
-                boundaries, guiding how roots rise, how moss settles across
-                stone, and how the miniature landscape is observed.
+              <p className="font-sans text-base sm:text-[17px] text-[#D0C8BA] leading-[1.85] max-w-xl">
+                Miniature landscapes composed within glass. Living
+                plants, moss, stone and natural wood come together
+                to create layered botanical environments, each
+                shaped by the form of its vessel.
               </p>
             </div>
-
-
           </div>
 
           {/* Kokedama */}
-          <div className="flex flex-col justify-between p-8 sm:p-12 bg-transparent">
-            
+          <div className="flex flex-col justify-between bg-transparent">
             <div>
-              <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-muted-grey/60 mb-6 block">
+              <span className="font-sans text-xs uppercase tracking-[0.28em] text-[#B99868] mb-6 block">
                 02 — Sculptural Botanicals
               </span>
 
-              <h3 className="font-serif text-2xl sm:text-4xl text-ivory font-light tracking-tight mb-4">
+              <h3 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-[#F1EBDD] font-light tracking-tight mb-5">
                 Kokedama
               </h3>
 
-              <p className="font-sans text-sm text-ivory/80 leading-relaxed mb-8">
-                A living plant presented through a traditional moss-based
-                planting technique, with its own character and dedicated care.
-                Free from glass, the living root sphere brings an organic,
-                architectural presence directly into personal spaces.
+              <p className="font-sans text-base sm:text-[17px] text-[#D0C8BA] leading-[1.85] max-w-xl">
+                A traditional moss-based planting form, reinterpreted
+                as a sculptural botanical piece. Each composition
+                brings the natural character of a living plant and
+                its moss-wrapped root form into your surroundings.
               </p>
             </div>
-
-
           </div>
+
         </div>
       </motion.div>
     </section>

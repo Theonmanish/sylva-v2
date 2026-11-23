@@ -37,11 +37,11 @@ export const CINEMATIC_SCENES: readonly CinematicScene[] = [
     src: "/images/cinematic/1.png",
     alt: "Sylva Auris — Wide rainforest establishing environment",
     wordmark: "SYLVA AURIS",
-    title: "Forest. Reimagined.",
-    body: "Terrariums and kokedama from Moodbidri, Karnataka.",
+    title: "The Art of Living Nature.",
+    body: "Discover handcrafted terrariums and kokedama, thoughtfully composed with natural materials and living botanicals. Each piece brings a quiet expression of nature into your space.",
     cta: {
       label: "Explore the Collection",
-      href: "/collection",
+      href: "/#collection",
     },
   },
   {
@@ -262,24 +262,25 @@ export function CinematicSequence() {
         {/* Scene 1 Text */}
         <motion.div
           style={{ opacity: textOpacity1, y: textY1 }}
-          className="absolute inset-0 z-70 flex flex-col items-center justify-center text-center px-6 pointer-events-auto"
+          className="absolute inset-0 z-[70] flex flex-col items-center justify-center text-center px-6 pointer-events-none"
         >
-          <p className="font-sans text-xs sm:text-sm uppercase tracking-[0.3em] text-muted-gold mb-4">
+          <div className="absolute inset-0 z-[65] bg-black/15 pointer-events-none" />
+          <p className="font-sans text-xl sm:text-lg font-semibold uppercase tracking-[0.35em] text-[#D6B77C] mb-5 [text-shadow:0_2px_12px_rgba(0,0,0,0.95)]">
             {CINEMATIC_SCENES[0].wordmark}
           </p>
 
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-ivory tracking-tight leading-[1.1] mb-6 max-w-4xl">
+          <h1 className="font-serif text-7xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-[#F1EBDD] tracking-tight leading-[1.1] mb-7 [text-shadow:0_3px_18px_rgba(0,0,0,0.45)]">
             {CINEMATIC_SCENES[0].title}
           </h1>
 
-          <p className="font-sans text-xs sm:text-sm text-ivory/80 uppercase tracking-[0.18em] mb-8 max-w-md">
+          <p className="font-sans text-sm sm:text-base text-[#F1EBDD] uppercase tracking-[0.12em] leading-[1.8] mb-9 max-w-xl font-medium [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">
             {CINEMATIC_SCENES[0].body}
           </p>
 
           {CINEMATIC_SCENES[0].cta && (
             <Link
               href={CINEMATIC_SCENES[0].cta.href}
-              className="inline-flex items-center px-6 py-3 border border-ivory/30 text-ivory text-xs uppercase tracking-[0.2em] font-sans hover:border-muted-gold hover:text-muted-gold transition-colors duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-muted-gold"
+              className="relative z-[80] inline-flex items-center justify-center px-7 py-3.5 border border-[#D6B77C]/80 bg-black/30 text-[#F1EBDD] text-xs font-medium uppercase tracking-[0.2em] backdrop-blur-sm hover:bg-[#B99868]/20 hover:border-[#D6B77C] hover:text-white transition-all duration-300 cursor-pointer pointer-events-auto focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D6B77C]"
             >
               {CINEMATIC_SCENES[0].cta.label}
             </Link>
@@ -289,19 +290,26 @@ export function CinematicSequence() {
         {/* Scene 2 Text */}
         <motion.div
           style={{ opacity: textOpacity2, y: textY2 }}
-          className="absolute inset-0 z-70 flex items-center px-6 sm:px-12 lg:px-20 pointer-events-auto"
+          className="absolute inset-0 z-[70] flex items-center px-6 sm:px-12 lg:px-20 pointer-events-none"
         >
-          <div className="max-w-xl text-left">
-            <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-muted-gold mb-3 block">
+          <div className="max-w-2xl text-left lg:ml-50">
+            <span className="font-sans text-xs sm:text-sm uppercase tracking-[0.3em] text-[#B99868] mb-5 block">
               02 — Botanical Details
             </span>
 
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-ivory font-light tracking-tight mb-4 leading-[1.15]">
+            <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#F1EBDD] font-light tracking-tight mb-6 leading-[1.12]">
               {CINEMATIC_SCENES[1].title}
             </h2>
 
-            <p className="font-sans text-sm sm:text-base text-ivory/80 leading-relaxed">
+            {/* Primary description */}
+            <p className="font-sans text-sm sm:text-base lg:text-lg text-[#EAE4D8] font-normal leading-[1.7] tracking-normal">
               {CINEMATIC_SCENES[1].body}
+            </p>
+
+            {/* Additional description — desktop only */}
+            <p className="hidden md:block font-sans text-sm lg:text-lg text-[#C8C0B2] font-normal leading-[1.7] tracking-normal mt-6">
+              Each element is thoughtfully placed, balancing natural textures, organic forms
+              and scale to create a landscape that feels both intricate and naturally composed.
             </p>
           </div>
         </motion.div>
@@ -309,19 +317,26 @@ export function CinematicSequence() {
         {/* Scene 3 Text */}
         <motion.div
           style={{ opacity: textOpacity3, y: textY3 }}
-          className="absolute inset-0 z-70 flex items-center justify-end px-6 sm:px-12 lg:px-20 pointer-events-auto"
+          className="absolute inset-0 z-[70] flex items-center justify-end px-6 sm:px-12 lg:px-20 pointer-events-none"
         >
-          <div className="max-w-xl text-left sm:text-right">
-            <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-muted-gold mb-3 block">
+          <div className="max-w-2xl text-left sm:text-right">
+            <span className="font-sans text-xs sm:text-sm uppercase tracking-[0.3em] text-[#B99868] mb-5 block">
               03 — Elements
             </span>
 
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-ivory font-light tracking-tight mb-4 leading-[1.15]">
+            <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#F1EBDD] font-light tracking-tight mb-6 leading-[1.12]">
               {CINEMATIC_SCENES[2].title}
             </h2>
 
-            <p className="font-sans text-sm sm:text-base text-ivory/80 leading-relaxed sm:ml-auto">
+            {/* Primary description */}
+            <p className="font-sans text-sm sm:text-base lg:text-lg text-[#EAE4D8] font-normal leading-[1.7] tracking-normal sm:ml-auto">
               {CINEMATIC_SCENES[2].body}
+            </p>
+
+            {/* Additional description — desktop only */}
+            <p className="hidden md:block font-sans text-sm lg:text-lg text-[#C8C0B2] font-normal leading-[1.7] tracking-normal mt-6 sm:ml-auto max-w-xl">
+              Every material contributes to the composition. Textures, forms and
+              proportions are brought together to create a balanced miniature landscape.
             </p>
           </div>
         </motion.div>
@@ -329,19 +344,26 @@ export function CinematicSequence() {
         {/* Scene 4 Text — Final Composition */}
         <motion.div
           style={{ opacity: textOpacity4, y: textY4 }}
-          className="absolute inset-0 z-70 flex items-center px-6 sm:px-12 lg:px-20 pointer-events-auto"
+          className="absolute inset-0 z-[70] flex items-center px-6 sm:px-12 lg:px-20 pointer-events-none"
         >
-          <div className="max-w-xl text-left">
-            <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-muted-gold mb-3 block">
+          <div className="max-w-2xl text-left lg:ml-12">
+            <span className="font-sans text-xs sm:text-sm uppercase tracking-[0.3em] text-[#B99868] mb-5 block">
               04 — Glass
             </span>
 
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-ivory font-light tracking-tight mb-4 leading-[1.15]">
+            <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#F1EBDD] font-light tracking-tight mb-6 leading-[1.12]">
               {CINEMATIC_SCENES[3].title}
             </h2>
 
-            <p className="font-sans text-sm sm:text-base text-ivory/80 leading-relaxed">
+            {/* Primary description */}
+            <p className="font-sans text-sm sm:text-base lg:text-lg text-[#EAE4D8] font-normal leading-[1.7] tracking-normal">
               {CINEMATIC_SCENES[3].body}
+            </p>
+
+            {/* Additional description — desktop only */}
+            <p className="hidden md:block font-sans text-sm lg:text-lg text-[#C8C0B2] font-normal leading-[1.7] tracking-normal mt-6">
+              Each vessel becomes a setting for its own composition, bringing together
+              living botanicals and natural materials within a carefully considered form.
             </p>
           </div>
         </motion.div>
