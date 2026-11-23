@@ -9,19 +9,7 @@ import { siteConfig } from "@/content/site";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-
-  // Monitor scroll position to transition from transparent to subtle translucent black
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -75,8 +63,8 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={`font-sans text-xs uppercase tracking-[0.2em] transition-colors duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-muted-gold ${isActive
-                    ? "text-ivory"
-                    : "text-muted-grey hover:text-ivory"
+                  ? "text-ivory"
+                  : "text-muted-grey hover:text-ivory"
                   }`}
               >
                 {item.label}
@@ -102,24 +90,30 @@ export function SiteHeader() {
         </button>
       </div>
 
+
       {/* Mobile Navigation Panel */}
       {isOpen && (
         <div
           id="mobile-navigation"
-          className="fixed inset-x-0 top-20 bottom-0 z-40 bg-pitch-black flex flex-col justify-between px-8 py-10 md:hidden border-t border-white/5"
+          className="absolute top-full inset-x-0 z-50 md:hidden
+               bg-black/85 backdrop-blur-xl
+               border-t border-white/10
+               px-8 py-7 shadow-2xl"
         >
           <nav
             aria-label="Mobile Navigation"
-            className="flex flex-col space-y-6 pt-4"
+            className="flex flex-col gap-6"
           >
             {primaryNavigation.map((item) => {
               const isActive = pathname === item.href;
+
               return (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={(item.href)}
                   onClick={() => setIsOpen(false)}
-                  className={`font-serif text-2xl tracking-[0.12em] transition-colors duration-300 ${isActive
+                  className={`font-serif text-xl tracking-[0.12em]
+              transition-colors duration-300 ${isActive
                       ? "text-muted-gold"
                       : "text-ivory hover:text-muted-gold"
                     }`}
@@ -129,19 +123,10 @@ export function SiteHeader() {
               );
             })}
           </nav>
-
-          <div className="pt-8 border-t border-white/5 flex flex-col space-y-3 text-xs text-muted-grey font-sans">
-            <p className="tracking-wide text-ivory/80">{siteConfig.tagline}</p>
-            <p className="text-muted-grey">{siteConfig.location}</p>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="hover:text-muted-gold transition-colors duration-300"
-            >
-              {siteConfig.email}
-            </a>
-          </div>
         </div>
       )}
+
+
     </header>
   );
 }

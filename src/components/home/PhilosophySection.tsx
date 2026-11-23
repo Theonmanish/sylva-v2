@@ -1,6 +1,4 @@
 
-import Link from "next/link";
-
 export function PhilosophySection() {
   return (
     <section
