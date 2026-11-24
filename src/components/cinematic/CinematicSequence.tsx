@@ -291,9 +291,9 @@ export function CinematicSequence() {
         {/* ================= SCENE 2 TEXT ================= */}
         <motion.div
           style={{ opacity: textOpacity2, y: textY2 }}
-          className="absolute inset-0 z-[70] flex items-center justify-start px-5 pt-20 pb-16 text-left sm:justify-start sm:px-12 sm:pt-0 sm:pb-0 lg:px-20 pointer-events-none"
+          className="absolute inset-0 z-[70] flex items-center justify-start px-5 pt-20 pb-16 sm:justify-start sm:px-12 sm:pt-0 sm:pb-0 lg:px-20 pointer-events-none"
           >
-          <div className="mr-auto w-[46vw] min-w-0 text-left sm:ml-auto sm:w-auto sm:max-w-2xl lg:ml-50 lg:mr-0">
+          <div className="mr-auto w-[46vw] min-w-0 text-left sm:mr-auto sm:w-auto sm:max-w-2xl lg:ml-12">
             <span className="font-sans text-[10px] min-[400px]:text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.3em] text-[#B99868] mb-3 sm:mb-5 block">
               02 — Botanical Details
             </span>
