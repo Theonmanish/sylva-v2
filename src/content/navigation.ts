@@ -11,6 +11,7 @@ export const primaryNavigation: NavItem[] = [
   { label: "Collection", href: "/#collection" },
   { label: "Philosophy", href: "/#philosophy" },
   { label: "Atelier", href: "/#atelier" },
+  { label: "Care", href: "https://care.sylvaauris.in/" },
   { label: "Contact", href: "/#enquiries" },
 ];
 
@@ -21,5 +22,6 @@ export const footerNavigation: NavItem[] = [
   { label: "Collection", href: "/#collection" },
   { label: "Philosophy", href: "/#philosophy" },
   { label: "Atelier", href: "/#atelier" },
+  { label: "Care", href: "https://care.sylvaauris.in/" },
   { label: "Contact", href: "/#enquiries" },
 ];
